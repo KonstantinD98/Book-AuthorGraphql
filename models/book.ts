@@ -5,7 +5,7 @@ export interface IBook extends Document {
   title: string;
   authorId: Schema.Types.ObjectId;
   year: number;
-  author: IAuthor; // Добавено поле author
+  author: IAuthor;
 }
 
 const bookSchema = new Schema<IBook>({
@@ -22,7 +22,7 @@ const bookSchema = new Schema<IBook>({
     type: Number,
     required: true,
   },
-  author: { // Добавен подсхема за автора
+  author: { 
     type: Schema.Types.ObjectId,
     ref: 'Author',
     required: true,
